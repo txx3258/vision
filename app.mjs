@@ -1,7 +1,7 @@
 import express from 'express';
 
-import indexAPI from './router/index';
-import imageAPI from './router/image';
+import indexAPI from './src/router/index';
+import imageAPI from './src/router/image';
 const app = express();
 
 app.use(express.json());
