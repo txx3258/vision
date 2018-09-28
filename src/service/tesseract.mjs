@@ -14,8 +14,6 @@ export function process(path) {
             binary: '/usr/local/bin/tesseract'
         };
 
-        fs.unlinkSync(path);
-
         tesseract.process(path, options, (err, text) => {
             //删除文件
             fs.unlinkSync(path);
