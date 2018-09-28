@@ -10,7 +10,6 @@ export function process(path) {
     return new Promise((resolve, rejects) => {
         const options = {
             l: 'chi_sim',
-            psm: 3,
             binary: '/usr/local/bin/tesseract'
         };
 
