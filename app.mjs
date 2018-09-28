@@ -5,8 +5,8 @@ import indexAPI from './src/router/index';
 import imageAPI from './src/router/image';
 const app = express();
 
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false, limit:'50mb' }))
 
 
 app.use("/api", indexAPI);
