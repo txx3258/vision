@@ -13,7 +13,7 @@ async function done(path, res) {
     res.json(res2ok({'result':result}));
 }
 
-router.post('/test', (req, res) => {
+router.get('/test', (req, res) => {
     let path = req.query.path;
     if (!path) {
         res.json(res2msg('参数path为空', 400));
