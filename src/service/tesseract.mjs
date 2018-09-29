@@ -15,7 +15,7 @@ export function process(path) {
 
         tesseract.process(path, options, (err, text) => {
             //删除文件      / / / /
-            fs.unlinkSync(path);
+            fs.unlink(path)
 
             if (err || !text) {
                 resolve(`error:${err}`);

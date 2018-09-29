@@ -3,11 +3,19 @@ import express from 'express';
 import formidable from 'formidable';
 import {process} from '../service/tesseract';
 
+import {rename} from './service/file';
 import {res2ok, res2msg} from '../common/result';
 
 const router = express.Router();
 
-async function done(path, res) {
+async function done(filename, path, res) {
+    let newpath = path.substring(0, path.lastIndexOf('/') + 1) + filename;
+    let status = await rename(path, newpath);
+    if (status) {
+        res.json(res2msg(status, 500));
+        return;
+    }
+
     let result = await process(path);
 
     res.json(res2ok({'result':result}));
@@ -43,7 +51,8 @@ router.post('/orc', (req, res) => {
         }
 
         let path = files[0][1].path;
-        done(path, res);
+        let filename = files[0][0];
+        done(filename, path, res);
     });
 })
 
