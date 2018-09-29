@@ -3,7 +3,7 @@ import express from 'express';
 import formidable from 'formidable';
 import {process} from '../service/tesseract';
 
-import {rename} from './service/file';
+import {rename} from '../service/file';
 import {res2ok, res2msg} from '../common/result';
 
 const router = express.Router();
