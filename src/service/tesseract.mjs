@@ -17,10 +17,10 @@ export function process(path) {
             //删除文件      / / / /
             fs.unlinkSync(path);
 
-            if (err) {
+            if (err || !text) {
                 resolve(`error:${err}`);
             } else {
-                resolve(text)
+                resolve(text.trim())
             }
         });
     });
