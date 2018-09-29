@@ -14,7 +14,7 @@ export function process(path) {
         };
 
         tesseract.process(path, options, (err, text) => {
-            //删除文件
+            //删除文件      / / / /
             fs.unlinkSync(path);
 
             if (err) {

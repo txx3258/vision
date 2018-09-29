@@ -7,12 +7,12 @@ export function res2ok(data) {
     }
 }
 
-export function res2msg() {
+export function res2msg(msg, code) {
     return {
-        'code': 500,
-        'msg': msg,
+        'code': code || 500,
+        'msg': msg || 'ERROR',
         'data': {
-            
+
         }
     }
 }
