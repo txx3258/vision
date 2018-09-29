@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser'
 
-import indexAPI from './src/router/index';
-import imageAPI from './src/router/image';
+import indexAPI from './router/index';
+import imageAPI from './router/image';
 const app = express();
 
 app.use(bodyParser.json());
