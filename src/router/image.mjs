@@ -16,7 +16,7 @@ async function done(filename, path, res) {
         return;
     }
 
-    let result = await process(path);
+    let result = await process(newpath);
 
     res.json(res2ok({'result':result}));
 }
